@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADHD Task Bingo</title>
+  <link rel="stylesheet" href="styles.css?v=20260311a" />
+</head>
+<body data-page="todo">
+  <main class="app-shell">
+    <header class="hero center">
+      <h1 data-i18n="common.appTitle">ADHD bingo</h1>
+      <p data-i18n="common.tagline">Stop thinking. Start clicking.</p>
+    </header>
+
+    <section class="toolbar">
+      <div class="lang-wrap">
+        <label for="langSelect" data-i18n="common.language">Language</label>
+        <select id="langSelect">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="zh">中文</option>
+        </select>
+      </div>
+
+      <div class="auth-panel">
+        <div id="authLoggedOut" class="auth-row">
+          <input id="authEmail" type="email" data-i18n-placeholder="auth.emailPlaceholder" placeholder="Email" />
+          <input id="authPassword" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" data-i18n-placeholder="auth.passwordPlaceholder" placeholder="Password" />
+          <button id="loginBtn" class="btn" data-i18n="auth.loginBtn">Login</button>
+          <button id="registerBtn" class="btn" data-i18n="auth.registerBtn">Sign Up</button>
+        </div>
+        <div id="authLoggedIn" class="auth-row hidden">
+          <span id="authUserEmail" class="user-email"></span>
+          <span id="todayBingoBadge" class="counter-pill"></span>
+          <button id="logoutBtn" class="btn" data-i18n="auth.logoutBtn">Logout</button>
+        </div>
+
+        <p id="authMessage" class="subtle auth-message"></p>
+      </div>
+    </section>
+
+    <section class="panel setup-panel">
+      <div class="panel-head">
+        <h2 data-i18n="todo.title">Create Task List</h2>
+        <div class="panel-head-tools">
+          <label for="boardSizeSelect" data-i18n="todo.boardSize">Board</label>
+          <select id="boardSizeSelect">
+            <option value="3">3 x 3</option>
+            <option value="4">4 x 4</option>
+            <option value="5">5 x 5</option>
+          </select>
+          <span id="todoCountBadge" class="counter-pill">0 / 25</span>
+          <button id="clearTodosBtn" class="icon-btn" data-i18n-title="todo.clearTitle" title="Clear Tasks" aria-label="Clear Tasks">🗑</button>
+        </div>
+      </div>
+
+      <div class="task-input-row">
+        <input id="todoInput" type="text" data-i18n-placeholder="todo.inputPlaceholder" placeholder="Type a task..." />
+        <button id="addTodoBtn" class="plus-btn" type="button" aria-label="add">+</button>
+      </div>
+
+      <div class="task-actions-row">
+        <button id="randomTodosBtn" class="pill-btn" type="button" data-i18n="todo.ideaBtn">💡 Task Ideas</button>
+      </div>
+
+      <div class="chip-box">
+        <ul id="todoChipList" class="chip-list"></ul>
+      </div>
+
+      <a id="generateBingoBtn" class="generate-btn" href="./board.html" data-i18n="todo.generateBtn">Generate Bingo</a>
+    </section>
+
+    <footer class="app-footer" data-i18n="common.footer">Designed for focus & relaxation</footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js?v=20260311b"></script>
+</body>
+</html>

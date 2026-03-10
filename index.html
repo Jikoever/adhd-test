@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADHD bingo</title>
+  <link rel="stylesheet" href="styles.css?v=20260311a" />
+</head>
+<body data-page="landing">
+  <main class="app-shell">
+    <header class="hero center">
+      <h1 data-i18n="common.appTitle">ADHD bingo</h1>
+      <p data-i18n="common.tagline">Stop thinking. Start clicking.</p>
+    </header>
+
+    <section class="toolbar">
+      <div class="lang-wrap">
+        <label for="langSelect" data-i18n="common.language">Language</label>
+        <select id="langSelect">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="zh">中文</option>
+        </select>
+      </div>
+
+      <div class="auth-panel">
+        <div id="authLoggedOut" class="auth-row">
+          <input id="authEmail" type="email" data-i18n-placeholder="auth.emailPlaceholder" placeholder="Email" />
+          <input id="authPassword" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" data-i18n-placeholder="auth.passwordPlaceholder" placeholder="Password" />
+          <button id="loginBtn" class="btn" data-i18n="auth.loginBtn">Login</button>
+          <button id="registerBtn" class="btn" data-i18n="auth.registerBtn">Sign Up</button>
+        </div>
+        <div id="authLoggedIn" class="auth-row hidden">
+          <span id="authUserEmail" class="user-email"></span>
+          <span id="todayBingoBadge" class="counter-pill"></span>
+          <button id="logoutBtn" class="btn" data-i18n="auth.logoutBtn">Logout</button>
+        </div>
+
+        <p id="authMessage" class="subtle auth-message"></p>
+      </div>
+    </section>
+
+    <section class="panel landing-panel">
+      <p class="subtle center-note" data-i18n="landing.subtitle">Choose what you want to do.</p>
+      <div class="landing-actions">
+        <a class="landing-action-card" href="./tasks.html">
+          <span class="landing-action-title" data-i18n="landing.tasksBtn">Add Tasks</span>
+          <span class="landing-action-desc" data-i18n="landing.tasksDesc">Create your task list and generate your board.</span>
+        </a>
+        <a class="landing-action-card" href="./calendar.html">
+          <span class="landing-action-title" data-i18n="landing.calendarBtn">Calendar</span>
+          <span class="landing-action-desc" data-i18n="landing.calendarDesc">View your daily Bingo history.</span>
+        </a>
+      </div>
+    </section>
+
+    <footer class="app-footer" data-i18n="common.footer">Designed for focus & relaxation</footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js?v=20260311b"></script>
+</body>
+</html>
