@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADHD Task Bingo</title>
+  <link rel="stylesheet" href="styles.css?v=20260311a" />
+</head>
+<body data-page="board">
+  <main class="app-shell">
+    <header class="hero center">
+      <h1 data-i18n="common.appTitle">ADHD bingo</h1>
+      <p data-i18n="common.tagline">Stop thinking. Start clicking.</p>
+    </header>
+
+    <section class="toolbar">
+      <div class="lang-wrap">
+        <label for="langSelect" data-i18n="common.language">Language</label>
+        <select id="langSelect">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="zh">中文</option>
+        </select>
+      </div>
+
+      <div class="auth-panel">
+        <div id="authLoggedOut" class="auth-row">
+          <input id="authEmail" type="email" data-i18n-placeholder="auth.emailPlaceholder" placeholder="Email" />
+          <input id="authPassword" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" data-i18n-placeholder="auth.passwordPlaceholder" placeholder="Password" />
+          <button id="loginBtn" class="btn" data-i18n="auth.loginBtn">Login</button>
+          <button id="registerBtn" class="btn" data-i18n="auth.registerBtn">Sign Up</button>
+        </div>
+        <div id="authLoggedIn" class="auth-row hidden">
+          <span id="authUserEmail" class="user-email"></span>
+          <span id="todayBingoBadge" class="counter-pill"></span>
+          <button id="logoutBtn" class="btn" data-i18n="auth.logoutBtn">Logout</button>
+        </div>
+
+        <p id="authMessage" class="subtle auth-message"></p>
+      </div>
+    </section>
+
+    <section class="board-controls">
+      <div class="size-inline">
+        <label for="boardSize" data-i18n="board.sizeLabel">Size</label>
+        <select id="boardSize">
+          <option value="3">3 x 3</option>
+          <option value="4">4 x 4</option>
+          <option value="5">5 x 5</option>
+        </select>
+        <button id="generateBoardBtn" class="btn" data-i18n="board.applySizeBtn">Apply Size</button>
+      </div>
+
+      <div class="action-inline">
+        <button id="shuffleBtn" class="pill-btn" type="button" data-i18n="board.shuffleBtn">🔀 Shuffle</button>
+        <button id="randomBoardBtn" class="pill-btn" type="button" data-i18n="board.randomBtn">🎯 Random Tasks</button>
+        <button id="restartBtn" class="pill-btn" type="button" data-i18n="board.restartBtn">↺ Restart</button>
+      </div>
+    </section>
+
+    <section class="panel board-panel">
+      <div class="board-meta-row">
+        <div class="board-meta-left">
+          <p id="boardInfo" class="subtle"></p>
+          <p id="boardHint" class="subtle"></p>
+          <p id="boardProgress" class="subtle"></p>
+        </div>
+        <div class="board-meta-right">
+          <div id="boardTodayInline" class="board-today-pill">Bingo 0</div>
+        </div>
+      </div>
+      <p id="bingoMessage" class="bingo-message"></p>
+
+      <div class="board-shell">
+        <div id="board" class="board"></div>
+      </div>
+    </section>
+
+    <div class="nav-row">
+      <a class="btn" href="./tasks.html" data-i18n="board.backBtn">Back To Tasks</a>
+      <a class="btn" href="./calendar.html" data-i18n="board.calendarBtn">Calendar</a>
+    </div>
+
+    <footer class="app-footer" data-i18n="common.footer">Designed for focus & relaxation</footer>
+  </main>
+
+  <div id="celebration" class="celebration" aria-hidden="true">
+    <div class="celebration-text" data-i18n="board.celebrate">BINGO! 🎉</div>
+    <div id="confettiLayer" class="confetti-layer"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js?v=20260311b"></script>
+</body>
+</html>

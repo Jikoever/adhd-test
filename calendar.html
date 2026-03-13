@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADHD bingo - Calendar</title>
+  <link rel="stylesheet" href="styles.css?v=20260311a" />
+</head>
+<body data-page="calendar">
+  <main class="app-shell">
+    <header class="hero center">
+      <h1 data-i18n="common.appTitle">ADHD bingo</h1>
+      <p data-i18n="common.tagline">Stop thinking. Start clicking.</p>
+    </header>
+
+    <section class="toolbar">
+      <div class="lang-wrap">
+        <label for="langSelect" data-i18n="common.language">Language</label>
+        <select id="langSelect">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="zh">中文</option>
+        </select>
+      </div>
+
+      <div class="auth-panel">
+        <div id="authLoggedOut" class="auth-row">
+          <input id="authEmail" type="email" data-i18n-placeholder="auth.emailPlaceholder" placeholder="Email" />
+          <input id="authPassword" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" data-i18n-placeholder="auth.passwordPlaceholder" placeholder="Password" />
+          <button id="loginBtn" class="btn" data-i18n="auth.loginBtn">Login</button>
+          <button id="registerBtn" class="btn" data-i18n="auth.registerBtn">Sign Up</button>
+        </div>
+        <div id="authLoggedIn" class="auth-row hidden">
+          <span id="authUserEmail" class="user-email"></span>
+          <span id="todayBingoBadge" class="counter-pill"></span>
+          <button id="logoutBtn" class="btn" data-i18n="auth.logoutBtn">Logout</button>
+        </div>
+
+        <p id="authMessage" class="subtle auth-message"></p>
+      </div>
+    </section>
+
+    <section class="panel calendar-panel">
+      <h2 data-i18n="calendar.yearTitle">Yearly Activity</h2>
+      <div class="calendar-stats-row">
+        <div class="calendar-stat-card">
+          <div class="calendar-stat-label" data-i18n="calendar.totalAll">Total Bingos</div>
+          <div id="calendarTotalAll" class="calendar-stat-value">0</div>
+        </div>
+        <div class="calendar-stat-card">
+          <div class="calendar-stat-label" data-i18n="calendar.currentStreak">Current Streak</div>
+          <div id="calendarCurrentStreak" class="calendar-stat-value">0</div>
+        </div>
+        <div class="calendar-stat-card">
+          <div class="calendar-stat-label" data-i18n="calendar.bestStreak">Best Streak</div>
+          <div id="calendarBestStreak" class="calendar-stat-value">0</div>
+        </div>
+      </div>
+
+      <div class="year-heatmap-wrap">
+        <div class="year-heatmap-head">
+          <div class="year-heatmap-weekday-spacer"></div>
+          <div id="yearHeatmapMonths" class="year-heatmap-months"></div>
+        </div>
+        <div class="year-heatmap-body">
+          <div class="year-heatmap-weekdays">
+            <span></span>
+            <span>M</span>
+            <span></span>
+            <span>W</span>
+            <span></span>
+            <span>F</span>
+            <span></span>
+          </div>
+          <div id="yearHeatmapGrid" class="year-heatmap-grid"></div>
+        </div>
+      </div>
+      <p id="yearHeatmapHint" class="subtle"></p>
+
+      <div class="calendar-head">
+        <h3 data-i18n="calendar.title">Bingo Calendar</h3>
+        <div class="calendar-nav">
+          <button id="calendarPrevBtn" class="btn" data-i18n="calendar.prev">Prev</button>
+          <span id="calendarMonthLabel" class="calendar-month-label"></span>
+          <button id="calendarNextBtn" class="btn" data-i18n="calendar.next">Next</button>
+        </div>
+      </div>
+
+      <p id="calendarSummary" class="subtle"></p>
+      <div id="calendarGrid" class="calendar-grid"></div>
+    </section>
+
+    <div class="nav-row">
+      <a class="btn" href="./tasks.html" data-i18n="board.backBtn">Back To Tasks</a>
+      <a class="btn" href="./board.html" data-i18n="todo.generateBtn">Generate Bingo</a>
+    </div>
+
+    <footer class="app-footer" data-i18n="common.footer">Designed for focus & relaxation</footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js?v=20260311b"></script>
+</body>
+</html>

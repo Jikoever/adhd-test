@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADHD Bingo Pro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: "#52796F",
+            cream: "#F0F2EB",
+            mint: "#DDEBE3",
+            ink: "#2F3E39",
+            sea: "#3C5D8B",
+            sunset: "#7B5D8E"
+          },
+          keyframes: {
+            chipPop: {
+              "0%": { transform: "scale(0.75) translateY(10px)", opacity: "0" },
+              "60%": { transform: "scale(1.08) translateY(-4px)", opacity: "1" },
+              "100%": { transform: "scale(1) translateY(0)", opacity: "1" }
+            },
+            pulseGlow: {
+              "0%, 100%": { boxShadow: "0 0 0 0 rgba(82,121,111,.26)" },
+              "50%": { boxShadow: "0 0 0 10px rgba(82,121,111,0)" }
+            }
+          },
+          animation: {
+            chipPop: "chipPop .55s cubic-bezier(.2,.8,.2,1) forwards",
+            pulseGlow: "pulseGlow 2.2s infinite"
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    .glass-card {
+      backdrop-filter: blur(6px);
+      background: rgba(240, 242, 235, 0.86);
+    }
+    .feature-dot::before {
+      content: "";
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 9999px;
+      background: #52796F;
+      display: inline-block;
+      margin-right: 0.5rem;
+      transform: translateY(-1px);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-cream text-ink antialiased selection:bg-forest/20">
+  <main class="min-h-screen">
+    <section class="relative overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(82,121,111,0.18),transparent_45%),radial-gradient(circle_at_85%_10%,rgba(109,164,142,0.18),transparent_45%)]"></div>
+      <div class="relative mx-auto max-w-6xl px-6 pb-16 pt-10 md:pt-14">
+        <header class="flex items-center justify-between">
+          <div class="inline-flex items-center gap-2 rounded-full border border-forest/25 bg-white/70 px-4 py-2 text-sm font-medium text-forest">
+            <i data-lucide="leaf" class="h-4 w-4" aria-hidden="true"></i>
+            ADHD Bingo Pro
+          </div>
+          <a href="#pricing" class="rounded-full border border-forest/40 px-4 py-2 text-sm font-semibold text-forest transition hover:bg-forest hover:text-cream">
+            Start for $4.99
+          </a>
+        </header>
+
+        <div class="mt-12 grid items-center gap-8 lg:grid-cols-2">
+          <div>
+            <p class="mb-4 inline-flex items-center gap-2 rounded-full bg-mint px-3 py-1 text-sm font-semibold text-forest">
+              <i data-lucide="sparkles" class="h-4 w-4" aria-hidden="true"></i>
+              Built for ADHD brains, not against them
+            </p>
+            <h1 class="text-4xl font-extrabold leading-tight text-ink md:text-6xl">
+              Your brain is different.
+              <span class="text-forest">Your tools should be too.</span>
+            </h1>
+            <p class="mt-5 max-w-xl text-lg leading-relaxed text-ink/75">
+              ADHD Bingo Pro turns messy tasks into low-pressure wins. No guilt, no overwhelm, just tiny steps and steady dopamine.
+            </p>
+            <div class="mt-7 flex flex-wrap gap-3">
+              <a href="#unstuck-demo" class="rounded-full bg-forest px-6 py-3 font-semibold text-cream shadow-sm transition hover:brightness-95">
+                Try Unstuck Demo
+              </a>
+              <a href="#features" class="rounded-full border border-forest/35 px-6 py-3 font-semibold text-forest transition hover:bg-forest/10">
+                Explore Features
+              </a>
+            </div>
+          </div>
+
+          <aside class="glass-card rounded-3xl border border-forest/20 p-6 shadow-[0_10px_30px_rgba(65,89,82,.14)]">
+            <p class="text-sm font-semibold uppercase tracking-wide text-forest/80">Before and after with AI</p>
+            <div class="mt-4 grid gap-3">
+              <div class="rounded-2xl border border-red-200 bg-red-50/60 p-4">
+                <p class="text-sm font-semibold text-red-700">Before: feels too big</p>
+                <p class="mt-1 text-sm text-red-700/85">“Clean the house”</p>
+              </div>
+              <div class="rounded-2xl border border-forest/30 bg-mint p-4">
+                <p class="text-sm font-semibold text-forest">After: 5 tiny actions</p>
+                <div class="mt-2 flex flex-wrap gap-2 text-xs font-medium text-forest/90">
+                  <span class="rounded-full bg-white/80 px-3 py-1">Wash one cup</span>
+                  <span class="rounded-full bg-white/80 px-3 py-1">Pick up socks</span>
+                  <span class="rounded-full bg-white/80 px-3 py-1">Wipe one table</span>
+                  <span class="rounded-full bg-white/80 px-3 py-1">Take trash out</span>
+                  <span class="rounded-full bg-white/80 px-3 py-1">Set 10-min timer</span>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="unstuck-demo" class="mx-auto max-w-6xl px-6 py-12">
+      <div class="rounded-3xl border border-forest/20 bg-white/80 p-6 md:p-8">
+        <div class="mb-5 flex items-center gap-3">
+          <div class="rounded-xl bg-mint p-2 text-forest">
+            <i data-lucide="wand-sparkles" class="h-5 w-5" aria-hidden="true"></i>
+          </div>
+          <h2 class="text-2xl font-bold text-ink md:text-3xl">The Unstuck AI Button</h2>
+        </div>
+        <p class="max-w-3xl text-ink/75">
+          Type one overwhelming task. We break it into 5 tiny Bingo tiles you can start right now.
+        </p>
+
+        <div class="mt-6 grid gap-3 md:grid-cols-[1fr_auto]">
+          <label for="taskInput" class="sr-only">Enter an overwhelming task</label>
+          <input
+            id="taskInput"
+            type="text"
+            value="Clean the house"
+            class="w-full rounded-2xl border border-forest/30 bg-cream px-4 py-3 text-base text-ink outline-none ring-0 placeholder:text-ink/45 focus:border-forest focus:ring-2 focus:ring-forest/30"
+            placeholder="e.g. Finish exam prep"
+            aria-describedby="unstuckHelp"
+          />
+          <button
+            id="unstuckBtn"
+            type="button"
+            class="inline-flex items-center justify-center gap-2 rounded-2xl bg-forest px-5 py-3 font-semibold text-cream transition hover:brightness-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest/40"
+          >
+            <i data-lucide="sparkles" class="h-4 w-4" aria-hidden="true"></i>
+            Magic Wand
+          </button>
+        </div>
+        <p id="unstuckHelp" class="mt-2 text-sm text-ink/60">No judgment. Tiny steps count.</p>
+
+        <div id="chipArea" class="mt-5 flex min-h-12 flex-wrap gap-2" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="features" class="mx-auto max-w-6xl px-6 py-6">
+      <div class="grid gap-5 md:grid-cols-3">
+        <article class="rounded-3xl border border-forest/20 bg-white/80 p-6">
+          <div class="mb-4 inline-flex rounded-xl bg-mint p-2 text-forest">
+            <i data-lucide="wand-sparkles" class="h-5 w-5" aria-hidden="true"></i>
+          </div>
+          <h3 class="text-xl font-bold text-ink">Unstuck AI</h3>
+          <p class="mt-2 text-ink/75">Break vague tasks into immediate, actionable Bingo tiles in one click.</p>
+        </article>
+
+        <article class="rounded-3xl border border-forest/20 bg-white/80 p-6">
+          <div class="mb-4 inline-flex rounded-xl bg-mint p-2 text-forest">
+            <i data-lucide="headphones" class="h-5 w-5" aria-hidden="true"></i>
+          </div>
+          <h3 class="text-xl font-bold text-ink">Zen Environments</h3>
+          <p class="mt-2 text-ink/75">Unlock Sunset Purple, Deep Sea Blue, and lo-fi or white-noise soundscapes.</p>
+        </article>
+
+        <article class="rounded-3xl border border-forest/20 bg-white/80 p-6">
+          <div class="mb-4 inline-flex rounded-xl bg-mint p-2 text-forest">
+            <i data-lucide="layout-template" class="h-5 w-5" aria-hidden="true"></i>
+          </div>
+          <h3 class="text-xl font-bold text-ink">Smart Templates</h3>
+          <p class="mt-2 text-ink/75">Unlimited guided lists for Morning Routines, Exam Prep, and Work Sprints.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="pricing" class="mx-auto max-w-6xl px-6 pb-16 pt-10">
+      <div class="grid gap-6 rounded-3xl border border-forest/25 bg-white/80 p-6 md:grid-cols-[1.2fr_.8fr] md:p-8">
+        <div>
+          <h2 class="text-3xl font-bold text-ink">A calm premium plan that pays for itself in focus.</h2>
+          <ul class="mt-5 space-y-2 text-ink/80">
+            <li class="feature-dot">Unlimited AI breakdowns with the Unstuck button</li>
+            <li class="feature-dot">All premium themes and soundscapes</li>
+            <li class="feature-dot">Unlimited professional templates</li>
+          </ul>
+        </div>
+
+        <div class="rounded-2xl border border-forest/25 bg-cream p-5">
+          <div class="flex items-center justify-between">
+            <p class="text-sm font-semibold text-forest">Billing</p>
+            <button id="billingToggle" type="button" class="rounded-full border border-forest/30 bg-white px-3 py-1 text-xs font-semibold text-forest">
+              Monthly
+            </button>
+          </div>
+          <p id="priceText" class="mt-4 text-4xl font-extrabold text-forest">$4.99<span class="text-lg font-semibold text-ink/65">/month</span></p>
+          <p id="priceHint" class="mt-2 text-sm text-ink/70">Start small. Cancel anytime.</p>
+          <button class="mt-5 w-full rounded-2xl bg-forest px-4 py-3 font-semibold text-cream transition hover:brightness-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest/40">
+            Start ADHD Bingo Pro
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+
+    const samples = {
+      clean: ["Wash one cup", "Pick up socks", "Wipe one table", "Take trash out", "Set a 10-minute timer"],
+      exam: ["Open one chapter", "Highlight 5 key lines", "Answer 3 questions", "Review one formula", "Take a 2-minute break"],
+      work: ["Open project board", "Reply to one email", "Define one next action", "Work for 10 minutes", "Log one progress note"],
+      default: ["Write one tiny step", "Set a 5-minute timer", "Clear one surface", "Drink one glass of water", "Mark one done tile"]
+    };
+
+    const chipArea = document.getElementById("chipArea");
+    const taskInput = document.getElementById("taskInput");
+    const unstuckBtn = document.getElementById("unstuckBtn");
+    const billingToggle = document.getElementById("billingToggle");
+    const priceText = document.getElementById("priceText");
+    const priceHint = document.getElementById("priceHint");
+
+    function pickTasks(value) {
+      const text = String(value || "").toLowerCase();
+      if (text.includes("clean") || text.includes("house")) return samples.clean;
+      if (text.includes("exam") || text.includes("study")) return samples.exam;
+      if (text.includes("work") || text.includes("project")) return samples.work;
+      return samples.default;
+    }
+
+    function renderChips(tasks) {
+      chipArea.innerHTML = "";
+      tasks.forEach((task, index) => {
+        const chip = document.createElement("span");
+        chip.className = "rounded-full border border-forest/30 bg-mint px-3 py-1.5 text-sm font-medium text-forest opacity-0";
+        chip.style.animationDelay = `${index * 80}ms`;
+        chip.classList.add("animate-chipPop");
+        chip.textContent = task;
+        chipArea.appendChild(chip);
+      });
+      unstuckBtn.classList.add("animate-pulseGlow");
+      setTimeout(() => unstuckBtn.classList.remove("animate-pulseGlow"), 1400);
+    }
+
+    unstuckBtn.addEventListener("click", () => {
+      renderChips(pickTasks(taskInput.value));
+    });
+
+    taskInput.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        renderChips(pickTasks(taskInput.value));
+      }
+    });
+
+    let yearly = false;
+    billingToggle.addEventListener("click", () => {
+      yearly = !yearly;
+      if (yearly) {
+        billingToggle.textContent = "Yearly";
+        priceText.innerHTML = '$49.99<span class="text-lg font-semibold text-ink/65">/year</span>';
+        priceHint.textContent = "Equivalent to $4.17/month. Save 16%.";
+      } else {
+        billingToggle.textContent = "Monthly";
+        priceText.innerHTML = '$4.99<span class="text-lg font-semibold text-ink/65">/month</span>';
+        priceHint.textContent = "Start small. Cancel anytime.";
+      }
+    });
+
+    renderChips(samples.clean);
+  </script>
+</body>
+</html>
