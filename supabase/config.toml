@@ -1,0 +1,4 @@
+project_id = "omdcmhalbtfxfobjmupr"
+
+[functions.ai-breakdown]
+verify_jwt = false
